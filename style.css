@@ -1,0 +1,469 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
+}
+:root {
+  --blue: #146CFF;
+  --violet: #8A4BFF;
+  --bg: #ffffff;
+  --text: #111111;
+  --card-bg: #f5f7ff;
+}
+body.dark {
+  --bg: #0e1621;
+  --text: #e8e8e8;
+  --card-bg: #1a2333;
+}
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.logo { font-weight: 600; font-size: 1.5rem; color: var(--blue); }
+.nav a { margin: 0 1rem; text-decoration: none; color: var(--text); font-weight: 500; }
+.nav a:hover { color: var(--violet); }
+.theme-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text); }
+.hero { text-align: center; padding: 6rem 1rem; background: linear-gradient(135deg, var(--blue), var(--violet)); color: white; }
+.btn { display: inline-block; background: white; color: var(--blue); padding: 0.75rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 600; transition: transform 0.2s; }
+.btn:hover { transform: scale(1.05); }
+.section { padding: 4rem 1rem; text-align: center; }
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
+.card { background: var(--card-bg); padding: 2rem; border-radius: 20px; max-width: 300px; transition: transform 0.3s, background 0.3s; }
+.card:hover { transform: translateY(-8px); }
+form { display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 400px; margin: 0 auto; }
+input, textarea { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 10px; font-family: 'Poppins', sans-serif; }
+button.btn { background: var(--violet); color: white; border: none; }
+.footer { text-align: center; padding: 1.5rem; background: var(--card-bg); }
+.teacher-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.teacher-img {
+  width: 180px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.teacher-info {
+  max-width: 400px;
+  text-align: left;
+}
+
+@media (max-width:700px){
+  .teacher-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .teacher-info { text-align: center; }
+}
+.faq-item { margin-bottom: 1rem; border-radius: 10px; background: var(--card-bg); overflow: hidden; }
+.faq-question { width: 100%; padding: 1rem; text-align: left; border: none; background: #eee; cursor: pointer; font-weight: 600; font-family: 'Poppins', sans-serif; }
+.faq-answer { padding: 0 1rem 1rem 1rem; display: none; }
+.faq-item.active .faq-answer { display: block; }
+.animate-hidden { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+.animate-show { opacity: 1; transform: translateY(0); }
+
+.animate-left { opacity: 0; transform: translateX(-30px); }
+.animate-left.show { opacity: 1; transform: translateX(0); transition: all 0.6s ease-out; }
+
+.animate-right { opacity: 0; transform: translateX(30px); }
+.animate-right.show { opacity: 1; transform: translateX(0); transition: all 0.6s ease-out; }
+.socials {
+  display: flex;
+  gap: 12px;
+}
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;  /* ширина іконки */
+  height: 48px; /* висота іконки */
+  font-size: 24px; /* розмір тексту/ікони */
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  background: linear-gradient(90deg,#146CFF,#8A4BFF);
+  border-radius: 50%;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.socials a:hover {
+  transform: scale(1.2); /* ефект при наведенні */
+}
+/* Центральна велика кнопка */
+.hero-center-cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+}
+
+.hero-btn {
+  background: linear-gradient(90deg, #146CFF, #8A4BFF);
+  color: white;
+  padding: 20px 40px;
+  font-size: 24px;
+  font-weight: 800;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(20,108,255,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 16px 40px rgba(20,108,255,0.5);
+}
+.hero-bottom-cta {
+  margin-top: 24px;
+  text-align: center; /* кнопка по центру в горизонталі */
+}
+
+.hero-btn {
+  background: linear-gradient(90deg, #146CFF, #8A4BFF);
+  color: white;
+  padding: 18px 36px;
+  font-size: 22px;
+  font-weight: 800;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(20,108,255,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 40px rgba(20,108,255,0.5);
+}
+/* Hero секція */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: center;
+  padding: 80px 0;
+  position: relative;
+}
+
+/* Текст ліворуч */
+.hero-left h1 {
+  font-size: 36px;
+  margin: 0;
+  color: #fff;
+  line-height: 1.05;
+}
+
+.hero-left .lead {
+  color: rgba(255,255,255,0.85);
+  margin: 14px 0 20px;
+}
+
+/* Велика кнопка по центру Hero (внизу) */
+.hero-bottom-cta {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.hero-btn {
+  background: linear-gradient(90deg, #146CFF, #8A4BFF);
+  color: white;
+  padding: 20px 40px;
+  font-size: 24px;
+  font-weight: 800;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(20,108,255,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 40px rgba(20,108,255,0.5);
+}
+
+/* Права частина (фото) */
+.hero-right .avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 4px solid rgba(20,108,255,0.12);
+}
+
+/* Адаптивність */
+@media (max-width:1000px){
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width:700px){
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px 0;
+  }
+
+  .hero-right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-right .avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero-bottom-cta {
+    margin-top: 16px;
+  }
+
+  .hero-btn {
+    padding: 16px 32px;
+    font-size: 20px;
+  }
+}
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(2,6,23,0.6);
+}
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-btn {
+  background: linear-gradient(270deg, #146CFF, #8A4BFF);
+  background-size: 400% 400%;
+  animation: gradientBG 8s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+/* Розділ Про нас */
+.about-card {
+  background: linear-gradient(180deg,#1b1f38,#0d1026);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.5);
+  color: #ffffff;
+  text-align: center;
+}
+
+.about-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  color: #8A4BFF;
+  margin-bottom: 20px;
+}
+
+.about-card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Анімація при скролі */
+.animate.show .about-card {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.8s ease-out;
+}
+/* Вікно для Програм */
+.programs-card {
+  background: linear-gradient(180deg,#1b1f38,#0d1026);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.5);
+  color: #ffffff;
+  text-align: center;
+}
+
+.programs-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  color: #8A4BFF;
+  margin-bottom: 24px;
+}
+
+/* Картки програм */
+.program-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.program-card {
+  background: linear-gradient(180deg,#ffffff,#fbfbff);
+  color: #071226;
+  padding: 22px;
+  border-radius: 16px;
+  width: 260px;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.45);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.6);
+}
+
+.program-card h3 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 12px;
+}
+
+.program-card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.card-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #146CFF, #8A4BFF);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.3s;
+}
+
+.card-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Адаптивність */
+@media (max-width:1000px) {
+  .program-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Вікно для викладача */
+.teacher-card {
+  background: linear-gradient(180deg,#1b1f38,#0d1026);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.5);
+  color: #ffffff;
+  text-align: center;
+}
+
+.teacher-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  color: #8A4BFF;
+  margin-bottom: 30px;
+}
+
+/* Контент викладача */
+.teacher-content {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.teacher-avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 4px solid rgba(20,108,255,0.12);
+}
+
+.teacher-desc {
+  max-width: 480px;
+  text-align: left;
+}
+
+.teacher-desc h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.teacher-desc p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.teacher-desc ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 18px;
+  color: rgba(255,255,255,0.85);
+}
+
+.teacher-desc li {
+  margin-bottom: 6px;
+}
+
+/* Кнопка запису */
+.teacher-desc .hero-btn {
+  margin-top: 12px;
+}
+
+/* Адаптивність */
+@media (max-width:1000px){
+  .teacher-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .teacher-desc {
+    max-width: 100%;
+  }
+
+  .teacher-avatar {
+    width: 140px;
+    height: 140px;
+  }
+}
