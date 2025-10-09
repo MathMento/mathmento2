@@ -156,17 +156,23 @@
       Обери зручний день і час — та зареєструйся на заняття прямо на сайті.
     </p>
     
- <!-- Віджет EasyWeek через iframe -->
-<div class="booking-widget">
-  <iframe
-    src="https://booking.easyweek.com.ua/mathmento"
-    width="100%"
-    height="600"
-    frameborder="0"
-    style="border-radius: 16px; box-shadow: 0 0 25px rgba(0,0,0,0.1);"
-    allowfullscreen>
-  </iframe>
-</div>
+<!-- Віджет EasyWeek через кнопку -->
+<div class="booking-widget"></div> <!-- контейнер кнопки -->
+<script src="https://booking.easyweek.com.ua/widget.js"></script>
+<script>
+  var ewWidget = new EasyWeekWidget({
+    url: 'https://booking.easyweek.com.ua/mathmento',
+    button: { 
+      text: 'Онлайн-запис', 
+      showText: true, 
+      color: '#ffffff', 
+      background: '#36ab48', 
+      textColor: '#383868', 
+      textBackground: '#ffffff' 
+    }
+  });
+</script>
+
 
     <div class="contact-extra">
       <h3>📞 Залишились питання?</h3>
