@@ -27,6 +27,7 @@
     <h1>MathMento — твій квиток до успішного НМТ</h1>
     <p class="lead">Індивідуальні заняття з математики, зрозуміла подача, реальний прогрес.</p>
 
+    <!-- Велика кнопка по центру Hero -->
     <div class="hero-bottom-cta">
       <a href="https://www.instagram.com/nmt_math._?igsh=bzkwMnYxd3RpZGNn" target="_blank" rel="noopener" class="btn hero-btn">
         ✈️ Записатися в Instagram
@@ -54,6 +55,7 @@
     </div>
   </div>
 </section>
+
 
 <section id="about" class="section container animate hidden">
   <div class="about-card">
@@ -109,8 +111,17 @@
           <li>Розбір типових задач</li>
           <li>Контроль прогресу</li>
         </ul>
+        </a>
       </div>
     </div>
+  </div>
+</section>
+
+    </div>
+  </div>
+</footer>  
+    </div>
+  
   </div>
 </section>
 
@@ -122,7 +133,7 @@
     <div class="card">«Рекомендую для тих, хто прагне результату.»</div>
   </div>
 </section>
-
+<!-- FAQ -->
 <section id="faq" class="section">
   <h2>Часті питання</h2>
   <div class="faq-item">
@@ -138,7 +149,6 @@
     <div class="faq-answer">Заняття проходять онлайн у зручний для вас час.</div>
   </div>
 </section>
-
 <section id="contacts" class="section contact-section">
   <div class="container animate">
     <h2 class="contact-title">📅 Запис на урок</h2>
@@ -146,13 +156,23 @@
       Обери зручний день і час — та зареєструйся на заняття прямо на сайті.
     </p>
 
-    <!-- EasyWeek JS-віджет -->
-    <div id="easyweek-widget"></div>
-    <script type="text/javascript" src="https://booking.easyweek.com.ua/widget.js" data-widget-id="198024"></script>
+    <!-- Віджет EasyWeek -->
+    <div class="booking-widget">
+      <iframe
+        src="https://mathmento.easyweek.io/widget"
+        width="100%"
+        height="600"
+        frameborder="0"
+        style="border-radius: 16px; box-shadow: 0 0 25px rgba(0,0,0,0.1);"
+        allowfullscreen>
+      </iframe>
+    </div>
 
     <div class="contact-extra">
       <h3>📞 Залишились питання?</h3>
-      <p>Напиши нам у Telegram або Instagram — ми відповімо протягом дня.</p>
+      <p>
+        Напиши нам у Telegram або Instagram — ми відповімо протягом дня.
+      </p>
       <div class="contact-links">
         <a href="https://t.me/lleerrkkaaaa" target="_blank" class="btn">✈️ Telegram</a>
         <a href="https://www.instagram.com/nmt_math._?igsh=bzkwMnYxd3RpZGNn" target="_blank" class="btn outline">📸 Instagram</a>
@@ -160,12 +180,13 @@
     </div>
   </div>
 </section>
-
 <footer>
   <p>© 2025 MathMento. Усі права захищено.</p>
 </footer>
 
-<!-- Підключення JS скриптів -->
+  <footer>
+  <p>© 2025 MathMento. Усі права захищено.</p>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
