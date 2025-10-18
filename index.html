@@ -187,6 +187,152 @@
   </div>
 </section>
   <footer>
+    <!-- ====== ПРОГРАМА КУРСУ ====== -->
+<section id="course-program" class="section container animate">
+  <h2>📘 Програма курсу</h2>
+  <p class="lead">Ознайомся з головними темами, кількістю занять і результатом, який ти отримаєш.</p>
+
+  <div class="program-table-wrapper">
+    <table class="program-table">
+      <thead>
+        <tr>
+          <th>Тема</th>
+          <th>Кількість занять</th>
+          <th>Результат</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Раціональні числа, дії з ними</td>
+          <td>2</td>
+          <td>Упевнене виконання дій із дробами, відсотками, степенями</td>
+        </tr>
+        <tr>
+          <td>2. Вирази та рівняння</td>
+          <td>3</td>
+          <td>Уміння спрощувати вирази та розв’язувати рівняння</td>
+        </tr>
+        <tr>
+          <td>3. Функції та графіки</td>
+          <td>2</td>
+          <td>Розуміння лінійних і квадратних функцій, побудова графіків</td>
+        </tr>
+        <tr>
+          <td>4. Геометрія (трикутники, коло, об’єми)</td>
+          <td>3</td>
+          <td>Застосування теорем і формул для розв’язування задач</td>
+        </tr>
+        <tr>
+          <td>5. Повторення і практика НМТ</td>
+          <td>4</td>
+          <td>Розв’язання типових завдань формату тесту</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ====== ПІДПИСКА НА МАТЕРІАЛИ ====== -->
+<section id="subscribe" class="section container animate">
+  <h2>🎯 Отримай безкоштовно “3 задачі для НМТ”</h2>
+  <p class="lead">Залиши свій email, і ми надішлемо короткий PDF із трьома тренувальними завданнями.</p>
+
+  <form id="subscribe-form" class="subscribe-form">
+    <input type="email" id="emailInput" placeholder="Введи свій email" required>
+    <button type="submit" class="btn">📩 Отримати PDF</button>
+  </form>
+
+  <p id="subscribe-message" class="subscribe-message"></p>
+</section>
+
+<style>
+  /* Таблиця програми */
+  .program-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .program-table th, .program-table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+  }
+  .program-table th {
+    background-color: #36ab48;
+    color: white;
+    font-weight: 600;
+  }
+  .program-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  /* Форма підписки */
+  .subscribe-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+  .subscribe-form input {
+    padding: 10px 15px;
+    border: 2px solid #36ab48;
+    border-radius: 6px;
+    width: 250px;
+    font-size: 1rem;
+  }
+  .subscribe-form button {
+    background: #36ab48;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .subscribe-form button:hover {
+    background: #2e8b3f;
+  }
+  .subscribe-message {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+</style>
+
+<script>
+  // Підписка на матеріали (імітація надсилання)
+  const form = document.getElementById('subscribe-form');
+  const emailInput = document.getElementById('emailInput');
+  const message = document.getElementById('subscribe-message');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+
+    if (!email.includes('@') || !email.includes('.')) {
+      message.textContent = "⚠️ Введи коректну email-адресу.";
+      message.style.color = "red";
+      return;
+    }
+
+    message.textContent = "✅ Дякуємо! PDF із трьома задачами вже надсилається на " + email + ".";
+    message.style.color = "#36ab48";
+
+    // Імітація завантаження PDF
+    setTimeout(() => {
+      const link = document.createElement('a');
+      link.href = '3_zadachi_NMT.pdf'; // додай свій файл PDF у цю директорію
+      link.download = '3_zadachi_NMT.pdf';
+      link.click();
+    }, 1500);
+
+    form.reset();
+  });
+</script>
   <p>© 2025 MathMento. Усі права захищено.</p>
 </footer>
 <script src="script.js"></script>
