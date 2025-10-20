@@ -518,3 +518,45 @@ button.btn { background: var(--violet); color: white; border: none; }
 .contact-links .btn:hover {
   transform: scale(1.05);
 }
+.reviews {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f7f9fc;
+}
+
+.reviews h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2b4b7c;
+}
+
+.review-card {
+  background: white;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-card h3 {
+  color: #1a3b6f;
+  margin-bottom: 10px;
+}
+
+.review-card .result {
+  color: #0c6fb7;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.review-card .text {
+  color: #333;
+  line-height: 1.6;
+}
