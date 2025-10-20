@@ -566,6 +566,13 @@ button.btn { background: var(--violet); color: white; border: none; }
   background-color: #f8faff;
 }
 
+/* === Нові стилі для карточок відгуків === */
+.reviews {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f8faff;
+}
+
 .reviews h2 {
   font-size: 2rem;
   margin-bottom: 30px;
@@ -573,7 +580,7 @@ button.btn { background: var(--violet); color: white; border: none; }
 }
 
 .review-card {
-  background: #fff;
+  background: #ffffff;
   max-width: 650px;
   margin: 20px auto;
   padding: 25px;
@@ -582,6 +589,28 @@ button.btn { background: var(--violet); color: white; border: none; }
   text-align: left;
   transition: transform 0.3s ease;
 }
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-card h3 {
+  color: #0d2f63;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.review-card .result {
+  color: #0562c5;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.review-card .text {
+  color: #333;
+  line-height: 1.6;
+}
+
 
 .review-card:hover {
   transform: translateY(-5px);
